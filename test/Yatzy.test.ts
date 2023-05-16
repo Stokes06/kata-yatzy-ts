@@ -77,6 +77,7 @@ describe('Two pair', () => {
   it('scores the sum of the two pairs', () => {
     assert.strictEqual(16, Yatzy.twoPairs(3, 3, 5, 4, 5));
     assert.strictEqual(16, Yatzy.twoPairs(3, 3, 5, 5, 5));
+    assert.strictEqual(0, Yatzy.twoPairs(3, 4, 5, 5, 5));
   });
 });
 
@@ -152,7 +153,7 @@ describe('Gold Master: many random inputs compared with a reference correct impl
       it(`for ${hand} ${functionName} = ${expected}`, () => {
         // @ts-ignore
         const actual = Yatzy[functionName](hand[0], hand[1], hand[2], hand[3], hand[4]);
-        assert.strictEqual(expected, actual);
+        assert.strictEqual(actual, expected);
       });
     }
   }
